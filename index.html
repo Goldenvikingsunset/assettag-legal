@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AssetTag — Free QR Code Asset Management App for Small Business</title>
+  <meta name="description" content="Track, tag, and manage every physical asset your business owns. QR code scanning, warranty alerts, depreciation tracking — stored in your own Excel on OneDrive or Google Drive. Free for up to 25 assets.">
+  <meta name="keywords" content="asset management app, QR code asset tracking, small business asset management, free asset tracking software, physical asset register, IT asset management, fixed asset tracking, asset tagging app, android asset management">
+  <meta name="author" content="AssetTag">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://goldenvikingsunset.github.io/assettag-legal/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://goldenvikingsunset.github.io/assettag-legal/">
+  <meta property="og:title" content="AssetTag — Free QR Code Asset Management for Small Business">
+  <meta property="og:description" content="Stop tracking assets in a messy spreadsheet. QR code scanning, warranty alerts, and depreciation tracking — with your data in your own OneDrive or Google Drive.">
+  <meta property="og:image" content="https://goldenvikingsunset.github.io/assettag-legal/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AssetTag — Free QR Code Asset Management for Small Business">
+  <meta name="twitter:description" content="Track every physical asset with QR codes. Data lives in Excel on your own cloud drive. Free for up to 25 assets.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AssetTag","description":"QR code asset management app for small businesses. Track physical assets with QR codes, warranty alerts, and depreciation tracking.","applicationCategory":"BusinessApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP","description":"Free for up to 25 assets"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --teal:#00E8C6;--teal-mid:#00C4A7;--teal-dim:rgba(0,232,198,.1);--teal-glow:rgba(0,232,198,.22);
+      --amber:#FFB547;--rose:#FF5A7E;
+      --ink:#0B0D12;--ink-2:#141720;--ink-3:#1C2030;
+      --border:rgba(255,255,255,.07);--border-t:rgba(0,232,198,.22);
+      --text:#E0E3EF;--muted:#7A84A0;--white:#fff;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);line-height:1.65;overflow-x:hidden}
+    /* grid bg */
+    body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,232,198,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,232,198,.025) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0}
+    /* orbs */
+    .orb{position:fixed;border-radius:50%;filter:blur(130px);pointer-events:none;z-index:0;opacity:.35}
+    .orb-1{width:700px;height:700px;background:var(--teal-mid);top:-250px;right:-200px;animation:drift1 14s ease-in-out infinite alternate}
+    .orb-2{width:500px;height:500px;background:#3730a3;bottom:0;left:-200px;animation:drift2 18s ease-in-out infinite alternate}
+    @keyframes drift1{to{transform:translate(-100px,80px);opacity:.18}}
+    @keyframes drift2{to{transform:translate(80px,-100px);opacity:.15}}
+    /* layout */
+    .wrap{max-width:1080px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+    .wrap-narrow{max-width:700px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+    /* nav */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;background:rgba(11,13,18,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+    .nav-logo{font-family:'Syne',sans-serif;font-size:19px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-.02em}
+    .nav-logo span{color:var(--teal)}
+    .nav-btn{background:var(--teal);color:var(--ink);font-weight:700;font-size:13px;padding:8px 18px;border-radius:8px;text-decoration:none;transition:opacity .2s,transform .2s}
+    .nav-btn:hover{opacity:.88;transform:translateY(-1px)}
+    /* hero */
+    .hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 90px}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:var(--teal-dim);border:1px solid var(--border-t);border-radius:100px;padding:6px 14px;font-size:11px;font-weight:600;color:var(--teal);letter-spacing:.09em;text-transform:uppercase;margin-bottom:24px}
+    .dot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+    h1{font-family:'Syne',sans-serif;font-size:clamp(34px,5vw,58px);font-weight:800;color:var(--white);line-height:1.06;letter-spacing:-.03em;margin-bottom:20px}
+    h1 em{color:var(--teal);font-style:normal}
+    .hero-sub{font-size:17px;color:var(--muted);line-height:1.75;margin-bottom:36px;font-weight:300}
+    .hero-sub strong{color:var(--text);font-weight:500}
+    /* forms */
+    .form-stack{display:flex;flex-direction:column;gap:10px}
+    .form-row{display:flex;gap:10px}
+    input,select{background:var(--ink-3);border:1px solid var(--border);border-radius:10px;padding:13px 17px;font-size:15px;color:var(--white);font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s,box-shadow .2s;width:100%}
+    input::placeholder{color:var(--muted)}
+    select{color:var(--muted)}
+    select option{background:var(--ink-2)}
+    input:focus,select:focus{border-color:var(--teal-mid);box-shadow:0 0 0 3px var(--teal-dim)}
+    .btn{background:var(--teal);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;padding:14px 28px;border:none;border-radius:10px;cursor:pointer;transition:opacity .2s,transform .15s,box-shadow .2s;white-space:nowrap;box-shadow:0 0 32px var(--teal-glow);width:100%}
+    .btn:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 0 56px var(--teal-glow)}
+    .btn:active{transform:translateY(0)}
+    .form-note{font-size:12px;color:var(--muted);line-height:1.5}
+    .form-note a{color:var(--teal);text-decoration:none}
+    .success{display:none;background:var(--teal-dim);border:1px solid var(--border-t);border-radius:14px;padding:28px;text-align:center}
+    .success .si{font-size:36px;margin-bottom:10px}
+    .success h3{font-family:'Syne',sans-serif;color:var(--teal);font-size:20px;margin-bottom:8px}
+    .success p{color:var(--muted);font-size:14px}
+    /* phone mockup */
+    .phone{background:var(--ink-2);border:1px solid var(--border);border-radius:36px;padding:18px;box-shadow:0 40px 120px rgba(0,0,0,.65),0 0 60px var(--teal-glow);max-width:268px;margin:0 auto;position:relative}
+    .phone::before{content:'';display:block;width:72px;height:4px;background:var(--ink-3);border-radius:2px;margin:0 auto 14px}
+    .screen{background:var(--ink-3);border-radius:22px;overflow:hidden;aspect-ratio:9/17;display:flex;flex-direction:column}
+    .m-hdr{background:var(--ink-2);padding:12px 14px;border-bottom:1px solid var(--border)}
+    .m-hdr-t{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--white)}
+    .m-kpis{display:flex;gap:5px;padding:9px}
+    .m-kpi{flex:1;background:var(--ink-2);border-radius:7px;padding:7px 4px;text-align:center}
+    .m-kpi .v{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:var(--teal);display:block}
+    .m-kpi .l{font-size:8px;color:var(--muted);display:block;margin-top:1px}
+    .m-list{padding:7px 9px;flex:1}
+    .m-row{display:flex;align-items:center;gap:7px;padding:7px;background:var(--ink-2);border-radius:7px;margin-bottom:5px}
+    .m-row .ico{font-size:14px}
+    .m-row .inf{flex:1}
+    .m-row .nm{font-size:9px;font-weight:600;color:var(--text)}
+    .m-row .id{font-size:8px;color:var(--muted)}
+    .m-badge{font-size:7px;font-weight:700;padding:2px 5px;border-radius:4px}
+    .ba{background:rgba(0,232,198,.12);color:var(--teal)}
+    .bw{background:rgba(255,181,71,.12);color:var(--amber)}
+    .fab{position:absolute;bottom:26px;right:26px;width:34px;height:34px;background:var(--teal);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:300;color:var(--ink);box-shadow:0 4px 18px var(--teal-glow)}
+    .fc{position:absolute;background:var(--ink-2);border:1px solid var(--border-t);border-radius:12px;padding:10px 14px;box-shadow:0 8px 32px rgba(0,0,0,.5);animation:float 4s ease-in-out infinite alternate}
+    .fc-1{top:16px;right:-46px}
+    .fc-2{bottom:56px;left:-54px;animation-delay:2s}
+    @keyframes float{to{transform:translateY(-9px)}}
+    .fc .fcl{font-size:9px;color:var(--muted);margin-bottom:3px}
+    .fc .fcv{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--teal)}
+    /* divider bar */
+    .bar{padding:22px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:90px}
+    .bar-inner{display:flex;align-items:center;gap:48px;flex-wrap:wrap}
+    .bar-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:600;white-space:nowrap}
+    .stats{display:flex;gap:48px;flex-wrap:wrap}
+    .stat .n{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--white)}
+    .stat .l{font-size:12px;color:var(--muted)}
+    /* sections */
+    .section{padding:90px 0}
+    .section-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+    h2{font-family:'Syne',sans-serif;font-size:clamp(26px,3.8vw,42px);font-weight:800;color:var(--white);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px}
+    .section-p{font-size:16px;color:var(--muted);font-weight:300;line-height:1.75;max-width:520px;margin-bottom:48px}
+    /* pain grid */
+    .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--ink-2);border:1px solid var(--border);border-radius:16px;padding:28px;transition:border-color .3s,transform .3s}
+    .card:hover{border-color:var(--border-t);transform:translateY(-4px)}
+    .card-ico{font-size:26px;margin-bottom:14px}
+    .card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:7px}
+    .card p{font-size:14px;color:var(--muted);line-height:1.65}
+    /* features */
+    .g2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .feat{background:var(--ink-2);border:1px solid var(--border);border-radius:16px;padding:30px;transition:border-color .3s}
+    .feat.hi{border-color:var(--border-t);background:linear-gradient(135deg,var(--ink-2),rgba(0,196,167,.05))}
+    .feat:hover{border-color:var(--border-t)}
+    .feat-ico{width:42px;height:42px;background:var(--teal-dim);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:18px}
+    .feat h3{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--white);margin-bottom:9px}
+    .feat p{font-size:14px;color:var(--muted);line-height:1.7}
+    .tag{display:inline-block;margin-top:12px;font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;background:var(--teal-dim);color:var(--teal);letter-spacing:.06em}
+    /* how it works */
+    .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+    .g4::before{content:'';position:absolute;top:27px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,var(--teal-mid),transparent)}
+    .step{text-align:center;padding:0 14px}
+    .step-n{width:54px;height:54px;background:var(--ink-3);border:1px solid var(--border-t);border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:19px;font-weight:800;color:var(--teal);margin:0 auto 18px;position:relative;z-index:1}
+    .step h3{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:7px}
+    .step p{font-size:13px;color:var(--muted);line-height:1.6}
+    /* privacy banner */
+    .p-banner{background:linear-gradient(135deg,var(--ink-2),rgba(0,196,167,.06));border:1px solid var(--border-t);border-radius:24px;padding:60px;text-align:center;position:relative;overflow:hidden}
+    .p-banner::before{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(0,232,198,.07) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%)}
+    .p-banner .section-p{margin:0 auto 36px;text-align:center}
+    .p-icons{display:flex;justify-content:center;gap:36px;flex-wrap:wrap}
+    .p-item{display:flex;flex-direction:column;align-items:center;gap:7px}
+    .p-item .pi{font-size:26px}
+    .p-item span{font-size:12px;color:var(--muted);font-weight:500;text-align:center;max-width:80px}
+    /* beta */
+    .beta-wrap{background:var(--ink-2);border:1px solid var(--border);border-radius:24px;padding:68px 60px;text-align:center;position:relative;overflow:hidden}
+    .beta-wrap::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(0,232,198,.1) 0%,transparent 70%)}
+    .beta-wrap .section-p{margin:0 auto 36px}
+    .perks{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin-bottom:36px}
+    .perk{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--text)}
+    .perk .pk{color:var(--teal)}
+    .bform{max-width:460px;margin:0 auto}
+    /* footer */
+    footer{border-top:1px solid var(--border);padding:44px 0}
+    .foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+    .foot-logo{font-family:'Syne',sans-serif;font-size:19px;font-weight:800;color:var(--white);text-decoration:none}
+    .foot-logo span{color:var(--teal)}
+    .foot-links{display:flex;gap:22px}
+    .foot-links a{font-size:14px;color:var(--muted);text-decoration:none;transition:color .2s}
+    .foot-links a:hover{color:var(--teal)}
+    .foot-copy{font-size:12px;color:var(--muted)}
+    /* reveal */
+    .rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+    .rv.on{opacity:1;transform:translateY(0)}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+    /* responsive */
+    @media(max-width:900px){
+      .hero-grid{grid-template-columns:1fr;gap:48px}
+      .phone-wrap{display:none}
+      .g3{grid-template-columns:1fr 1fr}
+      .g2{grid-template-columns:1fr}
+      .g4{grid-template-columns:1fr 1fr;gap:28px}
+      .g4::before{display:none}
+      .beta-wrap{padding:44px 24px}
+      .p-banner{padding:40px 24px}
+    }
+    @media(max-width:580px){
+      .g3{grid-template-columns:1fr}
+      .g4{grid-template-columns:1fr}
+      .form-row{flex-direction:column}
+      .bar-inner{gap:18px}
+      .stats{gap:20px}
+      .perks{flex-direction:column;align-items:center;gap:10px}
+    }
+  </style>
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Asset<span>Tag</span></a>
+  <a href="#beta" class="nav-btn">Join Beta →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="badge"><span class="dot"></span>Now in Beta — Join the Waitlist</div>
+        <h1>Stop losing track of<br><em>your assets.</em></h1>
+        <p class="hero-sub">AssetTag turns your physical asset register into a live, scannable system. <strong>QR codes, warranty alerts, depreciation tracking</strong> — your data stays in your own Excel on OneDrive or Google Drive. Free to get started.</p>
+
+        <form class="form-stack" id="hForm" action="https://formspree.io/f/xykdakkw" method="POST">
+          <input type="hidden" name="_subject" value="AssetTag Beta Signup">
+          <input type="hidden" name="source" value="hero">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Work email" required>
+          </div>
+          <button type="submit" class="btn">Get Early Access — It's Free →</button>
+          <p class="form-note">No spam. No credit card. By signing up you agree to our <a href="./privacy.html">Privacy Policy</a>.</p>
+        </form>
+        <div class="success" id="hSuccess">
+          <div class="si">✅</div>
+          <h3>You're on the list!</h3>
+          <p>We'll email you when AssetTag is ready for beta testing.</p>
+        </div>
+      </div>
+
+      <div class="phone-wrap">
+        <div style="position:relative;max-width:268px;margin:0 auto">
+          <div class="phone">
+            <div class="screen">
+              <div class="m-hdr"><div class="m-hdr-t">📊 Dashboard</div></div>
+              <div class="m-kpis">
+                <div class="m-kpi"><span class="v">47</span><span class="l">Total</span></div>
+                <div class="m-kpi"><span class="v">44</span><span class="l">Active</span></div>
+                <div class="m-kpi" style="background:rgba(255,181,71,.08)"><span class="v" style="color:var(--amber)">3</span><span class="l">Alerts</span></div>
+              </div>
+              <div class="m-list">
+                <div class="m-row"><span class="ico">💻</span><div class="inf"><div class="nm">MacBook Pro M3</div><div class="id">AST-0012 · IT Dept</div></div><span class="m-badge ba">Active</span></div>
+                <div class="m-row"><span class="ico">🖨️</span><div class="inf"><div class="nm">HP LaserJet Pro</div><div class="id">AST-0021 · Office 2</div></div><span class="m-badge bw">⚠ Warranty</span></div>
+                <div class="m-row"><span class="ico">📺</span><div class="inf"><div class="nm">Conference TV</div><div class="id">AST-0008 · Conf A</div></div><span class="m-badge ba">Active</span></div>
+                <div class="m-row"><span class="ico">🪑</span><div class="inf"><div class="nm">Aeron Chair</div><div class="id">AST-0033 · Hot Desk</div></div><span class="m-badge ba">Active</span></div>
+              </div>
+              <div class="fab">+</div>
+            </div>
+          </div>
+          <div class="fc fc-1"><div class="fcl">QR scanned</div><div class="fcv">AST-0041 ✓</div></div>
+          <div class="fc fc-2"><div class="fcl">Book value</div><div class="fcv">£12,480</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="bar">
+  <div class="wrap">
+    <div class="bar-inner">
+      <span class="bar-label">Why teams choose AssetTag</span>
+      <div class="stats">
+        <div class="stat"><div class="n">£0</div><div class="l">To get started</div></div>
+        <div class="stat"><div class="n">0</div><div class="l">New accounts needed</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">Your data, your drive</div></div>
+        <div class="stat"><div class="n">30 sec</div><div class="l">To find any asset</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section">
+  <div class="wrap">
+    <div class="rv">
+      <div class="section-label">The problem</div>
+      <h2>Most businesses track assets in a spreadsheet nobody updates.</h2>
+      <p class="section-p">You know where the big stuff is. But what about the 47 other things you bought this year? That laptop someone took home? The projector that disappeared between offices?</p>
+    </div>
+    <div class="g3">
+      <div class="card rv d1"><div class="card-ico">📋</div><h3>The spreadsheet nobody trusts</h3><p>Your asset register is out of date the moment it's created. Nobody updates it consistently, and nobody agrees on which version is current.</p></div>
+      <div class="card rv d2"><div class="card-ico">🔍</div><h3>"Where is the [thing]?"</h3><p>Someone needs the projector. 20 Slack messages later, it turns out it was returned to the other office three weeks ago.</p></div>
+      <div class="card rv d3"><div class="card-ico">📅</div><h3>Warranties expiring silently</h3><p>You find out a warranty expired when the equipment breaks. The repair bill is three times the renewal you missed.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:44px">
+      <div class="section-label">Features</div>
+      <h2>Everything you need.<br>Nothing you don't.</h2>
+      <p class="section-p">Built for SMEs, facilities managers, and IT teams who need a real asset register — not enterprise software that costs more than your assets.</p>
+    </div>
+    <div class="g2">
+      <div class="feat hi rv d1"><div class="feat-ico">📱</div><h3>QR Code Scanning</h3><p>Generate a QR label for any asset, stick it on, and scan it instantly from anywhere in the app. Full record, history, and location in under a second.</p><span class="tag">FREE</span></div>
+      <div class="feat rv d2"><div class="feat-ico">🗄️</div><h3>Your Data, Your Drive</h3><p>Everything stored in a single Excel file on your OneDrive, Google Drive, or SharePoint. No new accounts. No proprietary database. Export any time.</p><span class="tag">ALL PLANS</span></div>
+      <div class="feat rv d3"><div class="feat-ico">🔔</div><h3>Warranty Expiry Alerts</h3><p>Notifications at 90, 30, and 7 days before warranties expire. Alerts run locally on your device — no server, no subscription required for this feature.</p><span class="tag">FREE</span></div>
+      <div class="feat rv d4"><div class="feat-ico">📉</div><h3>Depreciation Tracking</h3><p>Straight-line and reducing balance depreciation. Know the current book value of every asset. Export a full depreciation schedule for your accountant.</p><span class="tag">GROWTH+</span></div>
+      <div class="feat rv"><div class="feat-ico">🏭</div><h3>Multi-Site Management</h3><p>Track assets across multiple locations and buildings. Filter your register by site, category, or status instantly.</p><span class="tag">ALL PLANS</span></div>
+      <div class="feat rv d1"><div class="feat-ico">🖨️</div><h3>Print Asset Labels</h3><p>Generate print-ready PDFs for Avery label sheets (L7160, L7163, L7173). Print from any printer — including paired Bluetooth label printers.</p><span class="tag">ALL PLANS</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:60px;text-align:center">
+      <div class="section-label">How it works</div>
+      <h2>Up and running in under five minutes.</h2>
+    </div>
+    <div class="g4">
+      <div class="step rv"><div class="step-n">1</div><h3>Sign in with Microsoft or Google</h3><p>Use your existing account. AssetTag creates one Excel file in your cloud drive — that's your entire database.</p></div>
+      <div class="step rv d1"><div class="step-n">2</div><h3>Add your first asset</h3><p>Name it, photograph it, assign category and location. A unique QR code is generated automatically.</p></div>
+      <div class="step rv d2"><div class="step-n">3</div><h3>Print and stick labels</h3><p>Generate a PDF for Avery label sheets. Print, peel, stick on each asset.</p></div>
+      <div class="step rv d3"><div class="step-n">4</div><h3>Scan to find anything instantly</h3><p>Point your camera at any label. Full asset record in under a second, from anywhere.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY USP -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="p-banner rv">
+      <div class="section-label" style="margin-bottom:16px">Data privacy</div>
+      <h2>Your data never leaves your control.</h2>
+      <p class="section-p">We don't have a database with your assets in it. Your entire asset register is one Excel file in your cloud drive. You own it completely. Delete the file and you're gone — no data deletion requests needed.</p>
+      <div class="p-icons">
+        <div class="p-item"><span class="pi">🗄️</span><span>Stored in your own OneDrive or Google Drive</span></div>
+        <div class="p-item"><span class="pi">🔒</span><span>OAuth auth — we never see your password</span></div>
+        <div class="p-item"><span class="pi">📤</span><span>Export to Excel any time, no lock-in</span></div>
+        <div class="p-item"><span class="pi">🚫</span><span>No ads, no selling data, ever</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BETA CTA -->
+<section class="section" id="beta">
+  <div class="wrap">
+    <div class="beta-wrap rv">
+      <div class="section-label" style="margin-bottom:16px">Beta programme</div>
+      <h2>Be one of our first testers.</h2>
+      <p class="section-p">We're looking for real businesses to help test AssetTag before we launch on Google Play. You get the full app completely free — in exchange for honest feedback.</p>
+      <div class="perks">
+        <div class="perk"><span class="pk">✓</span> Full app free during beta</div>
+        <div class="perk"><span class="pk">✓</span> 50% off launch price for life</div>
+        <div class="perk"><span class="pk">✓</span> Direct line to the developer</div>
+        <div class="perk"><span class="pk">✓</span> Shape the feature roadmap</div>
+      </div>
+
+      <form class="form-stack bform" id="bForm" action="https://formspree.io/f/xykdakkw" method="POST">
+        <input type="hidden" name="_subject" value="AssetTag Beta Application">
+        <input type="hidden" name="source" value="beta">
+        <div class="form-row">
+          <input type="text" name="first_name" placeholder="First name" required>
+          <input type="text" name="last_name" placeholder="Last name" required>
+        </div>
+        <input type="email" name="email" placeholder="Work email address" required>
+        <input type="text" name="company" placeholder="Company name (optional)">
+        <select name="assets">
+          <option value="" disabled selected>How many assets do you manage?</option>
+          <option>Under 25</option>
+          <option>25–100</option>
+          <option>100–500</option>
+          <option>500+</option>
+        </select>
+        <button type="submit" class="btn" style="margin-top:4px">Apply for Beta Access →</button>
+        <p class="form-note" style="margin-top:12px;text-align:center">We'll reply within 48 hours. No commitment required. <a href="./privacy.html">Privacy Policy</a>.</p>
+      </form>
+      <div class="success" id="bSuccess">
+        <div class="si">🎉</div>
+        <h3>Application received!</h3>
+        <p>We'll review your application and get back to you within 48 hours with your beta access link.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <a href="#" class="foot-logo">Asset<span>Tag</span></a>
+      <div class="foot-links">
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="./terms.html">Terms of Service</a>
+        <a href="mailto:hello@assettag.app">Contact</a>
+      </div>
+      <p class="foot-copy">© 2026 AssetTag. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('on'); }), {threshold:.1,rootMargin:'0px 0px -36px 0px'});
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+// Form submit
+async function handleForm(fid, sid) {
+  const f = document.getElementById(fid);
+  if(!f) return;
+  f.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = f.querySelector('button');
+    const orig = btn.textContent;
+    btn.textContent = 'Sending…'; btn.disabled = true;
+    try {
+      const r = await fetch(f.action, {method:'POST', body: new FormData(f), headers:{'Accept':'application/json'}});
+      if(r.ok){ f.style.display='none'; document.getElementById(sid).style.display='block'; }
+      else { btn.textContent='Error — please try again'; btn.disabled=false; }
+    } catch { btn.textContent=orig; btn.disabled=false; }
+  });
+}
+handleForm('hForm','hSuccess');
+handleForm('bForm','bSuccess');
+
+// Nav shadow on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.style.boxShadow = scrollY > 20 ? '0 8px 40px rgba(0,0,0,.5)' : 'none'; }, {passive:true});
+</script>
+</body>
+</html>
